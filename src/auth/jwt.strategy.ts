@@ -27,17 +27,17 @@ export class JwtStrategy extends PassportStrategy(BaseStrategy) {
   }
 
   validate(payload: JwtPayload): JwtPayload {
-    const minimumScope = ['openid', 'profile', 'email'];
+    // const minimumScope = ['openid', 'profile', 'email'];
 
-    if (
-      payload?.scope
-        ?.split(' ')
-        .filter((scope) => minimumScope.indexOf(scope) > -1).length !== 3
-    ) {
-      throw new UnauthorizedException(
-        'JWT does not possess the required scope (`openid profile email`).',
-      );
-    }
+    // if (
+    //   payload?.scope
+    //     ?.split(' ')
+    //     .filter((scope) => minimumScope.indexOf(scope) > -1).length !== 3
+    // ) {
+    //   throw new UnauthorizedException(
+    //     'JWT does not possess the required scope (`openid profile email`).',
+    //   );
+    // }
 
     return payload;
   }
